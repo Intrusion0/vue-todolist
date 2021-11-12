@@ -11,14 +11,20 @@
 <body>
     
     <div id="appList" class="container">
+        <h1>To Do List</h1>
+        <div class="container_input">
+            <!-- @keydown.space.prevent  Per non far inserire spazi all'interno dell'input box-->
+            <input type="text" v-model="newTask.text" v-on:keyup.13="addTask" placeholder="Inserisci nuovo task">
+            <button @click="addTask">Aggiungi</button>
+        </div>
         <ul>
-            <li>
-
+            <li v-for="(task, i) in tasks" :class="task.done == true ? 'deleted' : '' " :key="i">
+                {{task.text}}
+                <span><i class="fas fa-check" :class="task.done == true ? 'active_check' : '' "></i></span>
+                <span><i @click="deleteTask(i)" class="fas fa-trash-alt"></i></span>
             </li>
         </ul>
     </div>
-
-    <i class="fas fa-trash-alt active"></i>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="js/script.js"></script>
