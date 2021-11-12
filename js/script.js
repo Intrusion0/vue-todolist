@@ -41,7 +41,10 @@ var myAppList = new Vue({
         addTask() {
             if (this.newTask.text.length > 3) {
                 this.tasks.push(this.newTask);
-                this.newTask = {};
+                this.newTask = {
+                    text: '',
+                    done: false
+                };
             }
         },
         deleteTask(index) {
