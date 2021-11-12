@@ -51,6 +51,12 @@
     height: 30px;
 }
 
+.container-tf {
+    font-weight: 600;
+    font-size: 25px;
+    margin-left: 135px;
+}
+
 li > span:first-child {
     margin: 0 15px 0 40px;
 }
@@ -77,5 +83,4 @@ li > span:first-child {
 
 .fa-check.active_check {
     color: rgb(102, 255, 0);
-    cursor: no-drop;
 }

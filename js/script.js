@@ -45,7 +45,7 @@ var myAppList = new Vue({
             }
         },
         deleteTask(index) {
-            this.tasks.slice(index, 1)
+            this.tasks.splice(index, 1)
         }
     },
 });

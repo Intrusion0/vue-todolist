@@ -17,10 +17,13 @@
             <input type="text" v-model="newTask.text" v-on:keyup.13="addTask" placeholder="Inserisci nuovo task">
             <button @click="addTask">Aggiungi</button>
         </div>
-        <ul>
+        <div v-if="tasks.length === 0" class="container-tf">
+            Hai finito le task, complimenti!
+        </div>
+        <ul v-else>
             <li v-for="(task, i) in tasks" :class="task.done == true ? 'deleted' : '' " :key="i">
                 {{task.text}}
-                <span><i class="fas fa-check" :class="task.done == true ? 'active_check' : '' "></i></span>
+                <span><i class="fas fa-check" @click="task.done = !task.done" :class="task.done == true ? 'active_check' : '' "></i></span>
                 <span><i @click="deleteTask(i)" class="fas fa-trash-alt"></i></span>
             </li>
         </ul>
