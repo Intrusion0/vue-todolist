@@ -1,0 +1,23 @@
+/* General rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px 0;
+    /* debug */
+    background-color: red;
+    height: 200px;
+}
+
+.fa-trash-alt.active {
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+}
